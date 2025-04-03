@@ -1,0 +1,19 @@
+var N1,N2,N3;
+      N1=parseFloat(prompt("Digite a 1° nota"));
+      N2=parseFloat(prompt("Digite a 2° nota"));
+      N3=parseFloat(prompt("Digite a 3° nota"));
+   function media(){
+     
+      let result=(N1+N2+N3)/3;
+      alert("a media é:"+result.toFixed(2));
+      
+     if(result>6){
+       console.log("Aprovado");
+       
+     } else if(result>=3){
+       console.log("intervençao");
+     }else{
+       console.log("reprovado");
+     }
+ }
+   media();
