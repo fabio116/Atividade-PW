@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Média</title>
+</head>
+<body>
+  <h1>Calculadora de Média</h1>
+  <form>
+    <p>Primeira nota: <input type="number" id="N1"></p>
+    <p>Segunda nota: <input type="number" id="N2"></p>
+    <p>Terceira nota: <input type="number" id="N3"></p>
+    <p>Resultado: <input type="text" id="result" readonly></p>
+    <p><button type="button" onclick="media()">Calcular Média</button></p>
+    
+    <div id="situacao"></div>
+  </form>
+  
+
+  <script>
+    function media() {
+      var N1 = parseFloat(document.getElementById("N1").value) || 0;
+      var N2 = parseFloat(document.getElementById("N2").value) || 0;
+      var N3 = parseFloat(document.getElementById("N3").value) || 0;
+
+      var result = (N1 + N2 + N3) / 3;
+      document.getElementById("result").value = result.toFixed(2);
+
+      console.log("A média é " + result.toFixed(2));
+      
+      if(result>=6){
+        situacao="Aprovado"
+      }else if(result>=3){
+        situacao="Intervenção"
+    }else{
+        situacao="Reprovado";
+    }
+      
+      document.getElementById("situacao").innerHTML=`Situação: ${situacao}`;
+  
+    }
+  </script>
+</body>
+</html>
